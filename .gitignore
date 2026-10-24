@@ -1,0 +1,38 @@
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Antigravity & Agent Workspaces / Traces
+.agents/
+.system_generated/
+
+# Environment Variables & Secrets
+.env
+.env.local
+*.env
+credentials.json
+token.json
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor Configs
+.vscode/
+.idea/
+*.swp
+*.swo
