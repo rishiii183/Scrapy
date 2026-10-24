@@ -256,6 +256,18 @@ def build_parser() -> argparse.ArgumentParser:
         help="Run pipeline in dry-run simulation mode",
     )
     pipe_p.add_argument(
+        "--live",
+        dest="dry_run",
+        action="store_false",
+        help="Run live and commit new leads to Google Sheets CRM",
+    )
+    pipe_p.add_argument(
+        "--mock",
+        action="store_true",
+        default=False,
+        help="Use offline mock fixtures instead of live browser",
+    )
+    pipe_p.add_argument(
         "--confirm",
         action="store_true",
         default=False,
@@ -517,7 +529,7 @@ def handle_pipeline(args: argparse.Namespace) -> int:
         states=states,
         limit=args.limit,
         output=str(DATA_DIR / "extracted_leads.json"),
-        mock=True,
+        mock=getattr(args, "mock", False),
         niche=niche,
         filter=filter_mode,
     )
