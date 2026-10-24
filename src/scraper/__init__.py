@@ -35,8 +35,12 @@ from src.scraper.query_catalog import (
     get_default_query_catalog,
     generate_queries_for_niche,
 )
-from src.scraper.browser_manager import BrowserManager
-from src.scraper.maps_extractor import GoogleMapsExtractor
+try:
+    from src.scraper.browser_manager import BrowserManager
+    from src.scraper.maps_extractor import GoogleMapsExtractor
+except ImportError:
+    BrowserManager = None  # type: ignore
+    GoogleMapsExtractor = None  # type: ignore
 
 __all__ = [
     "BrowserManager",
