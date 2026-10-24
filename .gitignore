@@ -36,3 +36,8 @@ desktop.ini
 .idea/
 *.swp
 *.swo
+
+# Local Private Frontend Dashboard (Kept locally for private use)
+src/web/
+tests/unit/test_web_ui.py
+run_ui.py
